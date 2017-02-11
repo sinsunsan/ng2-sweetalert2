@@ -11,7 +11,7 @@ var _sweetalert = require('sweetalert2');
 
 var _sweetalert2 = _interopRequireDefault(_sweetalert);
 
-require('sweetalert2/dist/sweetalert2.min.css');
+// require('sweetalert2/dist/sweetalert2.min.css');
 
 var _lodash = require('lodash.assign');
 
