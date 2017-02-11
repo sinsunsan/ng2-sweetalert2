@@ -25,18 +25,23 @@ Next, inject `SweetAlertService` into a component:
 import { SweetAlertService } from 'ng2-sweetalert2';
 
 @Component({
+  // if you import theservice globally in a @ngmodule 
+  // this line is optional in the component
   providers: [SweetAlertService]
 })
 export class MyComponent {
 
-  static get parameters() {
-    return [[SweetAlertService]];
+ constructor(
+    private sweetAlertService: SweetAlertService
+ ) {}
+ 
+ // Example method that use the service
+ public onClick() {
+    this.sweetAlertService.confirm('Are you sure ? ');
   }
 
-  constructor(SweetAlertService) {
-    this.swalService = SweetAlertService;
-  }
 ```
+
 
 # API
 See [limonte/sweetalert2](https://github.com/limonte/sweetalert2) for examples.
