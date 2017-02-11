@@ -14,6 +14,12 @@ First, make sure you have a CSS loader set up for webpack, like so:
 },
 ```
 
+If you do not use webpack, comment the line 
+require('sweetalert2/dist/sweetalert2.min.css');
+in index.js compiled file
+And import the css separately from the origin sweetalert2 library
+
+
 Next, inject `SweetAlertService` into a component:
 ```js
 import { SweetAlertService } from 'ng2-sweetalert2';
@@ -27,8 +33,8 @@ export class MyComponent {
     return [[SweetAlertService]];
   }
 
-  constructor(swal) {
-    this.swalService = swal;
+  constructor(SweetAlertService) {
+    this.swalService = SweetAlertService;
   }
 ```
 
